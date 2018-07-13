@@ -20,6 +20,7 @@ module UsersHelper
     else 
    # @sign_in=false
      return false
+     
      #@helper ="helper works"
     end
   end

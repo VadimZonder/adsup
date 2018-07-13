@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     
     <%= favicon_link_tag 'favicon-196.png' %>
-    <title>SchoolApp Home</title>
+    <title>AdsUp Home</title>
 
     <!--the line below is taken from a template-->
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -50,14 +50,98 @@
 <body>
  
  <%= render 'layouts/header' %>
+ 
+  <!--the line below is taken from a template and I added a class-->
 
-
- <!--the line below is taken from a template and I added a class-->
- <div class="content purple-horizontal" >
     <!--the line below is taken from a template-->
     <div class="container-fluid "  >
         <!--the line below is taken from a template-->
         <div class="row">
+            
+            
+
+   <!--p > <i class="fa fa-user"></i><%#= " Hey:   #{@user_first_name}   and  #{@user_email}  "%></p>
+   <%# if @user_email.include? "vadimmalakhovski" %>
+    <p > <i class="fa fa-user"></i><%#= " Yes:   #{@user_first_name}   and  #{@user_email}  "%></p>
+    <%# if @user_email.include? "taskmaster" && user @user_first_name =='Vadim'  then render the button below%>
+
+    
+    <p > <i class="fa fa-user"></i><%#= " ldap #{@tasks}  "%></p-->
+      <%#=request.original_url%>
+    
+      <%#change on deployment%>
+     <%if request.original_url== 'https://adsup-vadimmalakhovski.c9users.io/logout' %>
+     
+     <%elsif request.original_url== 'https://adsup-vadimmalakhovski.c9users.io/' %>
+     <%= render 'tasks/form' %>
+      <%end%>
+
+
+  <h2 class="title">All Tasks</h2>
+                      <br>
+                      <div class="card">
+                       <div class="header">
+                        <h4 class="title">Tasks Table</h4>
+                       
+                        <br>
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                        
+                        <% if @tasks.length == 0 %>
+<!--empty filter error-->
+<div id="empty" >
+    <h2>We are sorry, 
+        <br><br>
+        there are no tasks
+        <br><br>
+    created yet</h2>  
+</div>
+<% end %>
+
+
+
+                      <table class="table table-hover table-striped">
+                          
+                        <thead>
+                            <tr>
+            
+            <th class="text-left">LDAP</th>
+            <th class="text-left">TASK</th>
+            <th class="text-left">STATUS</th>
+            <th class="text-left">Created At</th>
+            <th class="text-left">Updated At</th>
+                            </tr>
+                        </thead>
+                        
+                        <tbody>
+                            <% @tasks.each do |task| %>
+        <tr>                                      
+            
+                <td class="text-left"><%= task.ldap %></td>
+                <td class="text-left"><%= task.instruction %></td>
+                <td class="text-left"><%= task.status %></td>
+                <td class="text-left"><%= task.created_at%></td> 
+                <td class="text-left"><%= task.updated_at%></td> 
+                
+                   <tr> 
+                    <% end %>
+                            </tbody>
+                        </table>
+                       
+                    </div>
+                    
+           
+                
+     
+     
+     
+             
+
+     <%#else %>
+      <p > <i class="fa fa-user"></i><%= " No:   #{@user_first_name}   and  #{@user_email}  "%></p>
+    <%#end %>
+   
+
            <!--PARENT WINDOW -->
            <!--the line below is taken from a template + I changed the size-->
            <div class="col-md-6 hover" >

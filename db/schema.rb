@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180415091858) do
+ActiveRecord::Schema.define(version: 20180710131929) do
 
   create_table "lfilters", force: :cascade do |t|
     t.string   "lfilter"
@@ -50,6 +50,14 @@ ActiveRecord::Schema.define(version: 20180415091858) do
     t.string   "comment"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.string   "ldap"
+    t.string   "instruction"
+    t.boolean  "status"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|

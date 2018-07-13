@@ -1,0 +1,92 @@
+
+    <!--the line below is taken from a temp
+    <!--the line below is taken from a template-->
+    <div class="container-fluid "  >
+       
+             <div class="col-md-2 hover" >
+            <div class="card">
+                      
+                  
+          
+                            
+                         
+                          
+                     
+                        
+                     
+                          
+                          
+<%= form_for(@task) do |f| %>
+  <% if @task.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@task.errors.count, "error") %> prohibited this task from being saved:</h2>
+
+      <ul>
+      <% @task.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!--div class="field">
+    <%#= f.label :ldap %><br>
+    <%#= f.text_field :ldap %>
+  </div-->
+   <thead>
+                            <tr>
+            
+            <th class="text-left"><div class="field">
+    <%#= f.label :ldap %><br>
+    <%#= f.select :ldap %>
+      <%# making a dropdown menue inside the tasks form with all the registered users %>
+       <%# if current user is not master thenpre fill with current user ldap %>
+       <% if @user_email.include? "TaskMaster@vadim.cool" %>
+     <%= f.select(:ldap) do %>
+     <% @ldaps.each do |l| %>
+           <%= content_tag(:option, l.email) %>
+    <% end %>
+    
+    
+    <% end %>
+     <% else%>
+     <div class="field">
+    <%= f.label :ldap %><br>
+    <%= f.text_field :ldap, :value => @user_email, required: true, :readonly => true  %>
+  </div>
+   
+
+<% end %>
+  </div></th>
+            <th class="text-left"> <div class="field">
+    <%= f.label :instruction %><br>
+    <% if @user_email.include? "TaskMaster@vadim.cool" %>
+    <%= f.text_field :instruction %>
+    <% else%>
+    <%= f.text_field :instruction, required: true, :readonly => true%>
+    <% end %>
+  </div>
+  </th>
+            <th class="text-left"><div class="field">
+    <%= f.label :status %><br>
+    <%= f.check_box :status %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Submit', class: "btn purple-button" %>
+  </div></th>
+           
+                            </tr>
+                        </thead>             
+    
+  
+  
+ 
+  
+  
+<% end %>
+   
+                      
+                       
+                    </div>  </div></div>  
+               
+                

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ldap: MyString
+  instruction: MyString
+  status: false
+
+two:
+  ldap: MyString
+  instruction: MyString
+  status: false

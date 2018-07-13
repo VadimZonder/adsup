@@ -1,51 +1,6 @@
 
-<!--the line below is taken from a template-->
-<div class="wrapper">
-    <!--the line below is taken from a template-->
-    <div class="sidebar" data-color="purple">
 
 
-        <div class="sidebar-wrapper" >
-            <div class="logo">
-                <a href="https://www.linkedin.com/in/vadim-malakhovski/" target="_blank" class="simple-text">
-                    SchoolApp
-                </a>
-            </div>
-
-            <ul class="nav">
-                <li>
-                    <%= link_to ({:controller => 'parents', :action => 'index'}) do %>
-                    <%= image_tag("icons/parents32.png", :alt => "parents", :class => "header_icons") %>
-                    <span>Parents</span>
-                    <% end %>
-                </li>
-
-                <li>
-                    <%= link_to ({:controller => 'students', :action => 'index'}) do %>
-                    <%= image_tag("icons/teachers32.png", :alt => "teachers", :class => "header_icons") %>
-                    <span>Teachers</span>
-                    <% end %>
-                </li>
-
-                <li>
-                    <%= link_to "https://www.irishtimes.com/news/education" ,target: "_blank" do %>
-                    <%= image_tag("icons/articles32.png", :alt => "articles", :class => "header_icons") %>
-                    <span>Articles</span>
-                    <% end %>
-                </li>
-
-                <li>
-                    <%= link_to ({:controller => 'static_pages', :action => 'about'}) do %>
-                    <%= image_tag("icons/about32.png", :alt => "about", :class => "header_icons") %>
-                    <span>About Us</span>
-                    <% end %>
-                </li>
-
-            </ul>
-        </div>
-    </div>
-    <!--the line below is taken from a template-->
-    <div class="main-panel ">
         <!--the line below is taken from a template but eddited classes-->
         <nav class="navbar navbar-default navbar-fixed ">
             <!--the line below is taken from a template-->
@@ -65,8 +20,8 @@
                     <!--<a class="navbar-brand" href="#">Dashboard</a>-->
                     <!-- headers-->
                     <!--going back-->
-                    <a class="navbar-brand" href="https://schoolapple.herokuapp.com">
-                        <p class="font-weight-bold"><i class="fa fa-home"></i>  <%=" Home" %></p>
+                    <a class="navbar-brand" >
+                        <p class="font-weight-bold"><i class="fa fa-home"></i>  <%#=" Home" %></p>
 
 
                     </a>
@@ -94,7 +49,7 @@
                         </li>
 
                         <li >
-                            <a href="https://schoolapple.herokuapp.com/logout">
+                            <a href="https://adsup-vadimmalakhovski.c9users.io/logout">
 
                                 <p  class="float-left"> <i class="fa fa-power-off"></i><%= "     Log Out"%></p>
                             </a>
@@ -103,14 +58,14 @@
 
                         <%else%>
                         <li>
-                            <a href="https://schoolapple.herokuapp.com/signup" >
+                            <a href="https://adsup-vadimmalakhovski.c9users.io/signup" >
 
                                 <p ><i class="fa fa-user-plus"></i><%=" Register"%></p>
                             </a>
                         </li>
 
                         <li>
-                            <a href="https://schoolapple.herokuapp.com/login">
+                            <a href="https://adsup-vadimmalakhovski.c9users.io/login">
 
                                 <p><i class="fa fa-user-o"></i> <%=" Login"%></p>
                             </a>
@@ -122,5 +77,5 @@
 
 
                 </div>
-            </div>
+         
         </nav>
