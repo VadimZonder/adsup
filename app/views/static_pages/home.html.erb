@@ -70,9 +70,10 @@
       <%#=request.original_url%>
     
       <%#change on deployment%>
-     <%if request.original_url== 'https://adsup-vadimmalakhovski.c9users.io/logout' %>
+     <%#if request.original_url== 'https://adsup-vadimmalakhovski.c9users.io/logout' %>
+     <%if request.original_url== 'https://adsup.herokuapp.com/logout' %>
      
-     <%elsif request.original_url== 'https://adsup-vadimmalakhovski.c9users.io/' %>
+     <%elsif request.original_url== 'https://adsup.herokuapp.com/' %>
      <%= render 'tasks/form' %>
       <%end%>
 
