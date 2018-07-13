@@ -9,6 +9,8 @@ class StaticPagesController < ActionController::Base
   def home
    @time = Time.now.strftime("%B %e, %Y at %I:%M %p")
    
+   @task = Task.new
+   @tasks = Task.all
  
       
   if session[:user_id]  != nil 
