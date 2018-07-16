@@ -67,9 +67,13 @@
     <% end %>
   </div>
   </th>
-            <th class="text-left"><div class="field">
+    <th class="text-left"><div class="field">
     <%= f.label :status %><br>
+    <% if @user_email.include? "TaskMaster@vadim.cool" %>
+    <%= f.check_box :status, {}, "false" %> <%# , :disabled => true%>
+      <% else%>
     <%= f.check_box :status %>
+    <% end %>
   </div>
   <div class="actions">
     <%= f.submit 'Submit', class: "btn purple-button" %>
@@ -85,7 +89,10 @@
   
 <% end %>
    
-                      
+          <br>
+   <% if @user_email.include? "TaskMaster@vadim.cool" %>
+<%= link_to "All Tasks Page", tasks_path %>
+   <%end%>               
                        
                     </div>  </div></div>  
                

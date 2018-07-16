@@ -28,7 +28,7 @@ class StaticPagesController < ActionController::Base
 
 if user_email == 'TaskMaster@vadim.cool'
    @task = Task.new
-   @tasks = Task.all
+   @tasks = Task.all.order(:created_at => :desc)
    
    
 else   

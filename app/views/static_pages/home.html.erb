@@ -71,12 +71,15 @@
     
       <%#change on deployment%>
      <%#if request.original_url== 'https://adsup-vadimmalakhovski.c9users.io/logout' %>
-     <%if request.original_url== 'https://adsup.herokuapp.com/logout' %>
+     <%#if request.original_url== 'https://adsup.herokuapp.com/logout' %>
      
-     <%elsif request.original_url== 'https://adsup.herokuapp.com/' %>
+      <%#elsif request.original_url== 'https://adsup-vadimmalakhovski.c9users.io/' %>
+     <%#elsif request.original_url== 'https://adsup.herokuapp.com/' %>
+     <% if current_user%> 
      <%= render 'tasks/form' %>
-      <%end%>
-
+    
+     
+      <%#end%>
 
   <h2 class="title">All Tasks</h2>
                       <br>
@@ -134,200 +137,15 @@
            
                 
      
-     
+      <%end%>
      
              
 
-     <%#else %>
-      <p > <i class="fa fa-user"></i><%= " No:   #{@user_first_name}   and  #{@user_email}  "%></p>
-    <%#end %>
-   
-
-           <!--PARENT WINDOW -->
-           <!--the line below is taken from a template + I changed the size-->
-           <div class="col-md-6 hover" >
-             <!--the line below is taken from a template and I added a class--> 
-             <div class="card  purple-button ">
-
-                 
-                <%= link_to({:controller => 'parents', :action => 'index'}) do %>
-                <div class="header ">
-                   
-                  
-                    <h4 class="title">Parent</h4>
-                    <p class="category">See your student's results </p>
-                </div>
-                
-                
-                <div class="content">
-                    <!--content space-->
-                    <br><br><br><br><br>
-                    <!-- <div id="chartPreferences" class="ct-chart ct-perfect-fourth"></div>-->
-                    <%# link_to image_tag("parents.jpg",class:"image-buttons", id:"parents_image", :size => '168x98') %>
-
-                    <!--the line below is taken from a template-->
-                    <div class="footer">
-                        <!--the line below is taken from a template-->
-                        <div class="legend">
-                           <!--the line below is taken from a template-->
-                           <i></i> Parent,
-                           <i></i> Click
-                           <i></i> Here
-                       </div>
-                       <hr> <!--the line below is taken from a template-->
-                       <div class="stats">
-                           <!--the line below is taken from a template-->
-                           <i class="fa fa-pie-chart"></i> Total Analysis of Marks
-                       </div>
-                   </div>
-               </div>
-           </div>
-       </div>
-       <% end %>  
-       <!--PARENT WINDOW  END-->
-       
-       <!--TEACHER WINDOW  --> 
-       <!-- the same applies to the rest of the code. The elemets that I've already declare that are comming form the template are similar below-->
-       <div class="col-md-6 hover" >
-        <div class="card  purple-button ">
-           
-           <%= link_to({:controller => 'students', :action => 'index'}) do%>
-           <div class="header">
-            <h4 class="title">Teacher</h4>
-            <p class="category">Mark your student</p>
-        </div>
-        <div class="content">
-            <!--content space-->
-            <br><br><br><br><br>
-
-       
-            <div class="footer">
-                <div class="legend">
-                    <i></i> Teacher,
-                    <i></i> Click
-                    <i></i> Here
-                </div>
-                <hr>
-                <div class="stats">
-                    <i class="fa fa-key"></i> Request your teacher access code by - email: vadimmalakhovski@hotmail.com - or - call: +353857189054
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-<% end %>  
-
-<!--END TEACHER WINDOW  STATISTICS FIRST BIT OF CONTENT-->  
-<div class="row">
-    <div class="col-md-6">
-        <div class="card ">
-            <div class="header">
-                <h4 class="title">How-To Tutorial</h4>
-                <p class="category">Would you like to know more about us?</p>
-            </div>
-            <div class="content">
-                <!--<div id="chartActivity" class="ct-chart"></div>-->
-                <div class="youtube">
-                    <iframe width="auto" height="auto" src="https://www.youtube.com/embed/uBfnNGWW-jg">
-                    </iframe>
-                    
-                </div>
-                        </div>
-                    </div>
-                </div>
-                <!--END TEACHER WINDOW  STATISTICS FIRST BIT OF CONTENT-->  
-                
-                <div class="col-md-6">
-                    <div class="card ">
-                        <div class="header">
-                            <h4 class="title">Articles</h4>
-                            <p class="category">Education News/Articles</p>
-                        </div>
-                        <div class="content">
-                            <div class="table-full-width">
-                                <table class="table">
-                                    <tbody>
-                                        <tr>
-                                            <td>
-                                            </td>
-                                            <td><%= link_to "Storm Emma: Department of Education 'monitoring' situation as Ireland braces for 'exceptional weather event", "https://www.independent.ie/irish-news/storm-emma/storm-emma-department-of-education-monitoring-situation-as-ireland-braces-for-exceptional-weather-event-36648134.html",  :class => "a", :target => "_blank"%></td>
-                                        </tr>
-                                        
-                                        <tr>
-                                            <td>
-                                            
-                                            </td>
-                                            <td><%= link_to "Leaving Certificate Agricultural Science Higher Level: 'Well balanced and manageable","https://www.independent.ie/irish-news/education/exams/leaving-certificate-agricultural-science-higher-level-well-balanced-and-manageable-30368739.html",  :class => "a", :target => "_blank"%></td>
-                                            
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                               
-                                            </td>
-                                            <td> 
-                                                <%= link_to "Girls make grade again in Junior Cert results","https://www.irishtimes.com/news/education/girls-earn-better-results-than-boys-in-junior-cert-1.2792898",  :class => "a", :target => "_blank"%></td>
-                                            </td>
-                                            
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                               
-                                            </td>
-                                            <td>
-                                                <%= link_to "New Junior Cert English results show more pupils with good grades","https://www.independent.ie/irish-news/education/exams/new-junior-cert-english-results-show-more-pupils-with-good-grades-36127190.html",  :class => "a", :target => "_blank"%></td>
-                                                
-                                            </td>
-                                           
-                                        </tr>
-                                        <tr>
-                                            <td>
-                                                
-                                            </td>
-                                            
-                                            <td>
-                                             <%= link_to "College place offers being snapped up by students","https://www.independent.ie/irish-news/education/exams/college-place-offers-being-snapped-up-by-students-36056013.html",  :class => "a", :target => "_blank"%></td>
-                                         </td>
-                                         
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                           
-                                        </td>
-                                        <td>
-                                           <%= link_to "Answers to the most common questions on the CAO system","https://www.independent.ie/irish-news/education/exams/answers-to-the-most-common-questions-on-the-cao-system-36056003.html",  :class => "a", :target => "_blank"%></td>
-                                           
-                                       </td>
-                                       
-                                </tr>
-                                <tr>
-                                        <td>
-                                           
-                                        </td>
-                                        <td>
-                                           <%= link_to "Bullied students tormented about ‘weight or appearance’","https://www.irishtimes.com/news/education/bullied-students-tormented-about-weight-or-appearance-1.3473117",  :class => "a", :target => "_blank"%></td>
-                                           
-                                       </td>
-                                       
-                                </tr>
-                                  <tr>
-                                        <td>
-                                           
-                                        </td>
-                                        <td>
-                                           <%= link_to "Shortages of examiners across all subjects looms weeks before Leaving Cert","https://www.irishtimes.com/news/education/shortages-of-examiners-across-all-subjects-looms-weeks-before-leaving-cert-1.3473025",  :class => "a", :target => "_blank"%></td>
-                                           
-                                       </td>
-                                       
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
+    
                     <div class="footer">
                         <hr>
                         <div class="stats">
-                            <i class="fa "></i> Educate Yourself
+                            <i class="fa "></i> Communication
                         </div>
                     </div>
                 </div>
