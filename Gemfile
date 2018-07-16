@@ -36,19 +36,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 
-#Gems for charts/analysis________
-gem 'chartkick', '~> 1.2.4'
-gem 'highcharts-rails'
-gem 'groupdate', '~> 3.2.0'
-gem 'active_median', '~> 0.1.0'
 
-#google natural language
-gem "google-cloud-language"
-
-group :test do
-  gem "rspec"
-  gem "google-cloud-storage"
-end
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 #

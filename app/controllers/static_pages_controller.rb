@@ -28,12 +28,12 @@ class StaticPagesController < ActionController::Base
 
 if user_email == 'TaskMaster@vadim.cool'
    @task = Task.new
-   @tasks = Task.all.order(:created_at => :desc)
+   @tasks = Task.all.order(:created_at => :desc).limit(100) 
    
    
 else   
   @task = Task.where(["ldap = ?", user_email]).last
- @tasks= Task.where("ldap like (?) ",@user_email).order(:created_at => :desc) 
+ @tasks= Task.where("ldap like (?) ",@user_email).order(:created_at => :desc).limit(100) 
   
   
   # PATCH/PUT /tasks/1

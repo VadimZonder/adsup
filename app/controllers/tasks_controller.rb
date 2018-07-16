@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
-
+ include UsersHelper
   # GET /tasks
   # GET /tasks.json
   def index
