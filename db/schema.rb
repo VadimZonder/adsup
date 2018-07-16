@@ -13,45 +13,6 @@
 
 ActiveRecord::Schema.define(version: 20180710131929) do
 
-  create_table "lfilters", force: :cascade do |t|
-    t.string   "lfilter"
-    t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "pfilters", force: :cascade do |t|
-    t.string   "pfilter"
-    t.string   "email"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "results", force: :cascade do |t|
-    t.datetime "date_time"
-    t.string   "classes"
-    t.string   "teacher"
-    t.integer  "grade"
-    t.string   "email"
-    t.integer  "behaviour"
-    t.string   "comment"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "students", force: :cascade do |t|
-    t.string   "name"
-    t.string   "surname"
-    t.integer  "day_of_birth"
-    t.integer  "month_of_birth"
-    t.integer  "year_of_birth"
-    t.string   "school"
-    t.string   "email"
-    t.string   "comment"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
-  end
-
   create_table "tasks", force: :cascade do |t|
     t.string   "ldap"
     t.string   "instruction"

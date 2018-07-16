@@ -2,15 +2,10 @@ Rails.application.routes.draw do
     
   resources :tasks
     resources :students do 
-        resources :results
-    end
+          end
     
-    resources :results
-    resources :students
-    resources :users
-    resources :pfilters
-    resources :lfilters
-    resources :parents
+        resources :users
+        resources :parents
 
     post '/search' => 'students#search'
 
