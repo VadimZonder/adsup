@@ -39,7 +39,7 @@
                         <li>
 
 
-                            <a href="https://schoolapple.herokuapp.com/users/<%= @user_id%>/edit">
+                            <a href="https://adsup.herokuapp.com/users/<%= @user_id%>/edit">
 
                                 <%#=link_to "Welcome:   #{@user_name}", "https://deploy-vadimmalakhovski.c9users.io/users/#{@user_id}/edit" %>  <!--fix, this will be displayed on most of the pages so need in controllers , edit_user_path(@user) -->
                                 <%#activate when deploying%>
@@ -50,7 +50,7 @@
                         </li>
 
                         <li >
-                            <a href="https://adsup-vadimmalakhovski.c9users.io/logout">
+                            <a href="https://adsup.herokuapp.com/logout">
 
                                 <p  class="float-left"> <i class="fa fa-power-off"></i><%= "     Log Out"%></p>
                             </a>
@@ -59,14 +59,14 @@
 
                         <%else%>
                         <li>
-                            <a href="https://adsup-vadimmalakhovski.c9users.io/signup" >
+                            <a href="https://adsup.herokuapp.com/signup" >
 
                                 <p ><i class="fa fa-user-plus"></i><%=" Register"%></p>
                             </a>
                         </li>
 
                         <li>
-                            <a href="https://adsup-vadimmalakhovski.c9users.io/login">
+                            <a href="https://adsup.herokuapp.com/login">
 
                                 <p><i class="fa fa-user-o"></i> <%=" Login"%></p>
                             </a>
