@@ -126,7 +126,7 @@
         <tr>                                      
             
                 <td class="text-left"><%= task.ldap %></td>
-                <td class="text-left"><%= task.instruction %></td>
+                <td class="text-left"><%= task.instruction.split(' ').each_slice(2,).map { |top|  "#{top.first} #{top.last} -- *********** /"}%></td>
                 <td class="text-left"><%= task.status %></td>
                 <td class="text-left"><%= task.created_at%></td> 
                 <td class="text-left"><%= task.updated_at%></td> 
@@ -142,7 +142,69 @@
                 
      
       <%end%>
+      
+      
+        <% else %> 
+      
+      <h2 class="title">All Tasks</h2>
+                      <br>
+                      <div class="card">
+                       <div class="header">
+                        <h4 class="title">Tasks Table</h4>
+                       
+                        <br>
+                    </div>
+                    <div class="content table-responsive table-full-width">
+                        
+                        <% if @tasks.length == 0 %>
+<!--empty filter error-->
+<div id="empty" >
+    <h2>At this very moment, 
+        <br><br>
+        there are no tasks
+        <br><br>
+    created for you yet</h2>  
+</div>
+
+
+<% else %>
+
+
+
+                      <table class="table table-hover table-striped">
+                          
+                        <thead>
+                            <tr>
+            
+            <th class="text-left">LDAP</th>
+            <th class="text-left">TASK</th>
+            <th class="text-left">STATUS</th>
+            <th class="text-left">Created At</th>
+            <th class="text-left">Updated At</th>
+                            </tr>
+                        </thead>
+                        
+                        <tbody>
+                            <% @tasks.each do |task| %>
+        <tr>                                      
+            
+                <td class="text-left"><%= task.ldap %></td>
+                <td class="text-left"><%= task.instruction.split(' ').each_slice(2,).map { |top|  "#{top.first} #{top.last} -- *********** /"}%></td>
+                <td class="text-left"><%= task.status %></td>
+                <td class="text-left"><%= task.created_at.strftime("%H:%M:%S %n %D")%></td> 
+                <td class="text-left"><%= task.updated_at.strftime("%H:%M:%S %n %D")%></td> 
+                
+                   <tr> 
+                    <% end %>
+                            </tbody>
+                        </table>
+                       
+                    </div>
+                    
+           
+                
      
+      <%end%>
           <% end %>   
 
     

@@ -63,7 +63,7 @@
     <% if @user_email.include? "TaskMaster@vadim.cool" %>
     <%= f.text_field :instruction %>
     <% else%>
-    <%= f.text_field :instruction, required: true, :readonly => true%>
+    <%= f.text_field :instruction, required: true%>
     <% end %>
   </div>
   </th>
