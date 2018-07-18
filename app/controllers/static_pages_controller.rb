@@ -68,7 +68,7 @@ end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def task_params
-      params.require(:task).permit(:ldap, :instruction, :status)
+      params.require(:task).permit(:ldap, :instruction, :status, :done)
     end
       #____________________________________________________
       

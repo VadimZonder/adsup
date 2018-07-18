@@ -37,6 +37,7 @@
                       <br>
                       <div class="card">
                        <div class="header">
+                        <h4 class="title">Tasks Table</h4>
                        
                         <br>
                     </div>
@@ -63,7 +64,6 @@
             <th class="text-left">LDAP</th>
             <th class="text-left">TASK</th>
             <th class="text-left">STATUS</th>
-            <th class="text-left">DONE</th>
             <th class="text-left">Created At</th>
             <th class="text-left">Updated At</th>
             <th colspan="4">Edit / Delete</th>
@@ -77,9 +77,9 @@
                 <td class="text-left"><%= task.ldap %></td>
                 <td class="text-left"><%= task.instruction %></td>
                 <td class="text-left"><%= task.status %></td>
-                <td class="text-left"><%= task.done %></td>
-                <td class="text-left"><%= task.created_at.strftime("%H:%M:%S %n %D")%></td> 
-                <td class="text-left"><%= task.updated_at.strftime("%H:%M:%S %n %D")%></td>  
+                <td class="text-left"><%= task.created_at%></td> 
+                <td class="text-left"><%= task.updated_at%></td> 
+                <td><%= link_to 'Show', task %></td>
         <td><%= link_to 'Edit', edit_task_path(task) %></td>
         <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
                 

@@ -4,8 +4,10 @@ one:
   ldap: MyString
   instruction: MyString
   status: false
+  done: false
 
 two:
   ldap: MyString
   instruction: MyString
   status: false
+  done: false

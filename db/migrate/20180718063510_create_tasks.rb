@@ -4,6 +4,7 @@ class CreateTasks < ActiveRecord::Migration
       t.string :ldap
       t.string :instruction
       t.boolean :status
+      t.boolean :done
 
       t.timestamps null: false
     end

@@ -5,9 +5,8 @@ Rails.application.routes.draw do
           end
     
         resources :users
-        resources :parents
 
-    post '/search' => 'students#search'
+
 
     get 'sessions/new'
 

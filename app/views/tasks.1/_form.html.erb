@@ -1,9 +1,21 @@
-  <!--the line below is taken from a temp
+
+    <!--the line below is taken from a temp
     <!--the line below is taken from a template-->
     <div class="container-fluid "  >
        
              <div class="col-md-2 hover" >
             <div class="card">
+                      
+                  
+          
+                            
+                         
+                          
+                     
+                        
+                     
+                          
+                          
 <%= form_for(@task) do |f| %>
   <% if @task.errors.any? %>
     <div id="error_explanation">
@@ -62,17 +74,6 @@
       <% else%>
     <%= f.check_box :status %>
     <% end %>
-  </div>
-  
-  
-  <div class="field">
-    <%= f.label :done %><br>
-     <% if @user_email.include? "TaskMaster@vadim.cool" %>
-    <%= f.check_box :done, {}, "false" %> <%# , :disabled => true%>
-      <% else%>
-   <%= f.check_box :done %>
-    <% end %>
-    
   </div>
   <div class="actions">
     <%= f.submit 'Submit', class: "btn purple-button" %>
