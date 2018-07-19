@@ -11,7 +11,7 @@ module UsersHelper
      @user_name = User.where(id: session[:user_id]).first
      @user_first_name = User.find_by(id: session[:user_id]).first_name
     # @sign_in = User.find_by(id: session[:user_id]).last_name
-     @user_last_name = User.find_by(id: session[:user_id]).last_name
+     @user_language = User.find_by(id: session[:user_id]).last_name
      
       
      @user_email = User.find_by(id: session[:user_id]).email

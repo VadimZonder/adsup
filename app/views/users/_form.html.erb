@@ -36,8 +36,10 @@
                             <%= f.text_field :first_name %>
                         </div>
                         <div class="field">
-                            <%= f.label :last_name %><br>
-                            <%= f.text_field :last_name %>
+                            <%= f.label :last_name, 'Supported Language' %><br>
+                            <%= f.select (:last_name), options_for_select(["Arabic","Bulgarian","Catalan","Croatian","Czech","Danish","Dutch","English",
+                            "Estonian", "Finnish", "French", "German","Greek", "Hebrew","Hungarian", "Italian", "Polish", "Portuguese", "Romanian", "Russian",
+                            "Serbian", "Slovak", "Slovenian", "Spanish", "Swedish","Turkish", "Ukranian", "Language 1", "Language 2", "Language 3", "Language 4"]) %>
                         </div>
                         <div class="field">
                             <%= f.label :email, 'Your Google Email' %><br>

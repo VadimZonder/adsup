@@ -48,7 +48,7 @@
 </head>
 
 <body>
- 
+
  <%= render 'layouts/header' %>
  
   <!--the line below is taken from a template and I added a class-->
@@ -88,7 +88,12 @@
   <h2 class="title">All Tasks</h2>
 
                       <table class="table table-hover table-striped">
-                          
+                     
+        <%#check if there is a task for today and if not then display the default message %>
+      
+         <%#display all the tasks WITHOUT the default message%> 
+                             <%if @single_last_task  == @time && @user_email !="TaskMaster@vadim.cool"%>
+                                  
                         <thead>
                             <tr>
             
@@ -102,24 +107,103 @@
                         </thead>
                         
                         <tbody>
-                            <% @tasks.each do |task| %>
+                                        
+                <br><br>
+         <h3 class="title">You have tasks asigned for you today, please see below</h3>
+          
+            <% @tasks.each do |task| %>
         <tr>                                      
-            
-                <td class="text-left"><%= task.ldap %></td>
-                <td class="text-left"><%= task.instruction.split(' ').each_slice(2,).map { |top|  "#{top.first} #{top.last} / -- *********** => "}%></td>
+
+        
+              <td class="text-left"><%= task.ldap %></td>
+                <td class="text-left"><%= task.instruction.split(' ').each_slice(2,).map { |top|  "#{top.first}, #{top.last}"}%></td>
                 <td class="text-left"><%= task.status %></td>
                 <td class="text-left"><%= task.done %></td>
                 <td class="text-left"><%= task.created_at.strftime("%H:%M:%S %n %D")%></td> 
                 <td class="text-left"><%= task.updated_at.strftime("%H:%M:%S %n %D")%></td>  
-                
                    <tr> 
                     <% end %>
                             </tbody>
                         </table>
                        
                     </div>
-                    
            
+
+               <% elsif @single_last_task  != @time && @user_email !="TaskMaster@vadim.cool"%>
+                    
+                        <thead>
+                            <tr>
+                                
+                                                    </tbody>
+                        </table>
+                       
+                    </div>      
+                    
+         
+
+            <th class="text-left">DEFAULT TASK</th>
+
+                            </tr>
+                        </thead>
+                        
+                        <tbody>
+                                        
+                <br><br>
+            <%#display all the all tasks WITH the default message%> 
+             <h3 class="title">You do not have taks assigned for you yet so here is the default workflow</h3>
+
+                          <tr>                                      
+
+              <td class="text-left"> <%= @tasks_default %></td>
+                                       
+
+
+               
+ 
+                   <tr> 
+                   
+                   <% elsif @user_email =="TaskMaster@vadim.cool"%>
+                   <thead>
+                            <tr>
+            
+            <th class="text-left">EMAIL</th>
+            <th class="text-left">TASK</th>
+            <th class="text-left">STATUS</th>
+            <th class="text-left">DONE</th>
+            <th class="text-left">Created At</th>
+            <th class="text-left">Updated At</th>
+                            </tr>
+                        </thead>
+                        
+                        <tbody>
+                                        
+                <br><br>
+   
+          
+            <% @tasks.each do |task| %>
+        <tr>                                      
+
+        
+              <td class="text-left"><%= task.ldap %></td>
+                <td class="text-left"><%= task.instruction.split(' ').each_slice(2,).map { |top|  "#{top.first}, #{top.last}"}%></td>
+                <td class="text-left"><%= task.status %></td>
+                <td class="text-left"><%= task.done %></td>
+                <td class="text-left"><%= task.created_at.strftime("%H:%M:%S %n %D")%></td> 
+                <td class="text-left"><%= task.updated_at.strftime("%H:%M:%S %n %D")%></td>  
+                   <tr> 
+                    <% end %>
+                    
+                            </tbody>
+                        </table>
+                       
+                    </div>      
+                    
+         
+           
+           
+              <% end %>
+              
+                            
                 
      
       <%end%>
@@ -166,14 +250,16 @@
                         
                         <tbody>
                             <% @tasks.each do |task| %>
-        <tr>                                      
-            
+                            
+        <tr>                
+       
                 <td class="text-left"><%= task.ldap %></td>
-                <td class="text-left"><%= task.instruction.split(' ').each_slice(2,).map { |top|  "#{top.first} #{top.last} / -- *********** => "}%></td>
+                <td class="text-left"><%= task.instruction.split(' ').each_slice(2,).map { |top|  "#{top.first}, #{top.last}"}%></td>
                 <td class="text-left"><%= task.status %></td>
                 <td class="text-left"><%= task.done %></td>
                 <td class="text-left"><%= task.created_at.strftime("%H:%M:%S %n %D")%></td> 
-                <td class="text-left"><%= task.updated_at.strftime("%H:%M:%S %n %D")%></td> 
+                <td class="text-left"><%= task.updated_at.strftime("%H:%M:%S %n %D")%></td>  
+                
                 
                    <tr> 
                     <% end %>
